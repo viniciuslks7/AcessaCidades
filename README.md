@@ -95,10 +95,4 @@ Aplicativo web que promove a inclusão e facilita o mapeamento de locais acessí
 - **Vinicius Siqueira de Oliveira** — FATEC Jales
 - **Yuri Ribeiro Abe** — FATEC Jales
 
-## Próximos passos (sugestões)
-- Publicar no GitHub Pages para demonstração rápida
-- Adicionar PWA (manifest e service worker) para uso offline
-- Internacionalização (pt-BR/en)
-- Coleta anônima de feedbacks no site
-
 
