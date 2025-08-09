@@ -1,0 +1,292 @@
+/* Estilos gerais */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Tema escuro */
+body.dark-theme {
+    background-color: #333;
+    color: white;
+}
+
+/* Header */
+header {
+    background-color: #007bff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Tema escuro no header */
+body.dark-theme header {
+    background-color: #444;
+}
+
+header h1 {
+    color: white;
+}
+
+/* Estilo da navegação */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: -20px;  /* Distância entre o título/logo e a navegação */
+    text-align: center;  /* Centraliza a navegação */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Main */
+main {
+    padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    background-color: #e0e0e0;
+    padding: 50px 0;
+}
+
+/* Tema escuro no Hero */
+body.dark-theme .hero {
+    background-color: #222;
+}
+
+.hero h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Seção de Feedback */
+.feedback-section {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Tema escuro na seção de feedback */
+body.dark-theme .feedback-section {
+    background-color: #555;
+}
+
+.feedback-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Feedback Card */
+.feedback-card {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 35px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 0 auto;
+    width: 90%;
+    min-height: 250px;
+}
+
+/* Tema escuro na Feedback Card */
+body.dark-theme .feedback-card {
+    background-color: #444;
+    color: white;
+}
+
+.user-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-info h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-left: 15px;
+}
+
+/* Tema escuro no nome do usuário */
+body.dark-theme .user-info h3 {
+    color: #8ab4f8;
+}
+
+.stars i {
+    color: #ffcc00;
+    font-size: 1.5rem;
+}
+
+.icon-feedback {
+    font-size: 5rem;
+    color: #007bff;
+    margin-top: 10px;
+}
+
+.swiper-container.feedback-swiper {
+    width: 100%;
+    height: auto;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.feedback-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.feedback-card .stars {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 250px;
+}
+
+.feedback-card p {
+    text-align: justify;
+    color: #333;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* Tema escuro no Footer */
+body.dark-theme footer {
+    background-color: #222;
+}
+
+/* Estilos do botão de alternância de tema */
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+    position: fixed;
+    top: 20px;
+    right: 20px;  /* Posiciona no canto superior direito */
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #007bff;
+    flex-wrap: wrap; /* Garante que o conteúdo se ajuste conforme necessário */
+    text-align: center;
+}
+
+.header-title {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Logo do AcessaCidades */
+.acessa-logo {
+    width: 50px;  /* Ajuste do tamanho da logo */
+    height: auto;
+    margin-left: 15px;  /* Distância entre o título e a logo */
+}
+
+.acessa-logo:focus {
+    outline: 2px solid #007bff; /* Realça a logo quando estiver em foco */
+}
+
+/* Estilo para o botão da guia de acessibilidade */
+.guide-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Modal de acessibilidade */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+/* Estilo para a caixa de modal no tema escuro */
+body.dark-theme .modal-content {
+    background-color: #121212; /* Fundo preto para a modal */
+    color: white; /* Cor do texto em branco */
+}
+
+/* Estilo para o modal no tema escuro */
+body.dark-theme .modal {
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro e semitransparente para a área do modal */
+}
+

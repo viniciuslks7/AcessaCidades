@@ -1,0 +1,353 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007bff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+}
+
+/* Estilo da navegação */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: -20px;  /* Distância entre o título/logo e a navegação */
+    text-align: center;  /* Centraliza a navegação */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+main {
+    padding: 20px;
+}
+
+.hero {
+    text-align: center;
+    background-color: #e0e0e0;
+    padding: 50px 0;
+    position: relative; /* Permite que os elementos filhos se posicionem em relação a ele */
+}
+
+.hero h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+    z-index: 1; /* Coloca o texto acima da logo */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    z-index: 1; /* Garante que o texto fique acima da logo */
+}
+
+/* Estilo para o header */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #007bff;
+    flex-wrap: wrap; /* Garante que o conteúdo se ajuste conforme necessário */
+    text-align: center;
+}
+
+.header-title {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.app-presentation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.app-info {
+    max-width: 50%;
+}
+
+.app-info h3 {
+    color: #007bff;
+}
+
+.app-info p {
+    margin: 20px 0;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+.download-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.store-badge {
+    width: 150px;
+    height: auto;
+}
+
+.app-display {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.mockup-container {
+    position: relative;
+    z-index: 1; /* Coloca o celular (mockup) acima do carrossel */
+}
+
+.cellphone {
+    width: 300px;
+    height: auto;
+    position: relative;
+    z-index: 2; /* Assegura que o mockup do celular esteja acima do carrossel */
+}
+
+/* Ajuste da imagem dentro do carrossel */
+.app-screenshot {
+    width: 100%; /* Garante que a imagem ocupe toda a largura do contêiner */
+    height: 100%; /* Garante que a imagem ocupe toda a altura do contêiner */
+    object-fit: cover; /* Faz a imagem cobrir todo o espaço, cortando as partes que não se ajustam */
+    object-position: center; /* Garante que o centro da imagem seja sempre exibido */
+}
+
+/* Ajuste fino do carrossel para que ele se ajuste ao celular */
+.swiper-container {
+    position: absolute;
+    top: 5%; /* Ajuste a posição para garantir que o carrossel ocupe o espaço necessário */
+    left: 15%; /* Ajuste a posição para o alinhamento perfeito */
+    width: 70%;
+    height: 90%; /* Ajuste a altura do carrossel para que ele ocupe a maior parte do celular */
+    overflow: hidden;
+    border-radius: 25px;
+    z-index: 0; /* Mantém o carrossel atrás do celular */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #007bff;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.features {
+    background-color: #ede2e2d4;
+    padding: 50px;
+    text-align: center;
+}
+
+.features-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.feature {
+    max-width: 30%;
+    text-align: center;
+}
+
+.icon-feature {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    color: #007bff;
+    margin: 10px 0;
+}
+
+.cta {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+.cta .download-buttons {
+    justify-content: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* Logo do AcessaCidades */
+.acessa-logo {
+    width: 50px;  /* Ajuste do tamanho da logo */
+    height: auto;
+    margin-left: 15px;  /* Distância entre o título e a logo */
+}
+
+.acessa-logo:focus {
+    outline: 2px solid #007bff; /* Realça a logo quando estiver em foco */
+}
+
+/* Estilo para o texto destacado */
+.highlight-text {
+    font-weight: bold; /* Deixa o texto mais forte */
+    color: #000000; /* Cor azul para dar mais destaque */
+    font-size: 1.0rem; /* Aumenta o tamanho da fonte */
+    text-transform: uppercase; /* Deixa o texto em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre as letras para dar ênfase */
+    line-height: 1.6; /* Aumenta a altura da linha para melhorar a legibilidade */
+    margin: 10px 0; /* Adiciona margens para separar o texto */
+    transition: color 0.3s ease, transform 0.3s ease; /* Animação suave ao passar o mouse */
+}
+
+.highlight-text:hover {
+    color: #3d3535b0; /* Muda a cor para um tom mais escuro ao passar o mouse */
+    transform: translateY(-3px); /* Efeito de elevação ao passar o mouse */
+}
+
+/* Estilo para o botão da guia de acessibilidade */
+.guide-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Modal de acessibilidade */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+/* Adicionando uma classe para o tema escuro */
+body.dark-theme {
+    background-color: #121212; /* Fundo do body em tom mais suave de escuro */
+    color: white; /* Cor do texto no tema escuro */
+}
+
+body.dark-theme .hero {
+    background-color: #262020de; /* Fundo do herói em tom suave de escuro */
+}
+
+body.dark-theme .hero h2,
+body.dark-theme .hero p {
+    color: white; /* Texto na seção do herói */
+
+}
+
+/* Estilo para a seção 'Funcionalidades do Acessa Cidades' */
+body.dark-theme .features {
+    background-color: #262020de; /* Fundo das funcionalidades em tom suave de escuro */
+    color: white; /* Cor do texto nas funcionalidades */
+}
+
+body.dark-theme .features-list .feature h3,
+body.dark-theme .features-list .feature p {
+    color: white; /* Texto das funcionalidades */
+}
+
+/* Garantindo que os botões e outros elementos também mudem para o tema escuro */
+body.dark-theme button {
+    background-color: #444444; /* Fundo dos botões em tom suave de escuro */
+    color: white; /* Cor do texto nos botões */
+}
+
+body.dark-theme button:hover {
+    background-color: #555555; /* Fundo do botão ao passar o mouse */
+}
+
+/* Estilo para o botão "Guia de Acessibilidade" no tema escuro */
+body.dark-theme .guide-btn {
+    background-color: #007bff; /* Fundo do botão em preto */
+    color: white; /* Cor do texto em branco para garantir boa visibilidade */
+}
+
+body.dark-theme .guide-btn:hover {
+    background-color: #333333; /* Fundo do botão em cinza escuro quando passar o mouse */
+}
+
+/* Estilo para a caixa de modal no tema escuro */
+body.dark-theme .modal-content {
+    background-color: #121212; /* Fundo preto para a modal */
+    color: white; /* Cor do texto em branco */
+}
+
+/* Estilo para o modal no tema escuro */
+body.dark-theme .modal {
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro e semitransparente para a área do modal */
+}
+
+/* Estilo para o footer no tema escuro */
+body.dark-theme footer {
+    background-color: #1c1c1c; /* Mantém o footer no tom mais escuro */
+    color: white;
+}

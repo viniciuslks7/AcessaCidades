@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AcessaCidades - Informações sobre acessibilidade urbana.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>AcessaCidades - Acessibilidade para Todos</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <style>
+        /* Estilos para o botão de opções de cores */
+        .color-options-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .color-options-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Menu de opções */
+        .color-options {
+            display: none;
+            position: fixed;
+            top: 50px;
+            right: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .color-options input {
+            margin: 5px 0;
+        }
+
+        /* Estilos para os temas */
+        body.dark-theme {
+            background-color: #333;
+            color: #f8f9fa;
+        }
+
+        body.dark-theme p,
+        body.dark-theme h1,
+        body.dark-theme h2,
+        body.dark-theme h3,
+        body.dark-theme h4,
+        body.dark-theme a,
+        body.dark-theme .color-options-btn {
+            color: #f8f9fa;
+        }
+
+        body.dark-theme .color-options {
+            background-color: #444;
+            color: #f8f9fa;
+            border-color: #666;
+        }
+
+        body.high-contrast {
+            filter: contrast(1.5);
+        }
+
+        body.grayscale {
+            filter: grayscale(100%);
+        }
+
+        /* Redefinir o tema */
+        body {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <h1 class="header-title" tabindex="0">AcessaCidades</h1>
+            <img src="img/acessacidades.svg" alt="Logo do AcessaCidades" class="acessa-logo" tabindex="0"
+                aria-label="Logo do AcessaCidades">
+        </div>
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html" tabindex="0">Início</a></li>
+                <li><a href="sobre.html" tabindex="0">Sobre</a></li>
+                <li><a href="func.html" tabindex="0">Funcionalidades</a></li>
+                <li><a href="contato.html" tabindex="0">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+        <section class="hero">
+            <h2 tabindex="0">Bem-vindo ao AcessaCidades</h2>
+            <p tabindex="0">O aplicativo que ajuda a mapear locais acessíveis e a promover a inclusão urbana. Descubra
+                os melhores lugares para todos, independente das suas necessidades.</p>
+        </section>
+
+        <section class="app-presentation">
+            <div class="app-info">
+                <p class="highlight-text" tabindex="0">O AcessaCidades é um aplicativo inovador que permite aos usuários
+                    visualizar e mapear a acessibilidade de diversos locais. Com ele, você pode encontrar lugares
+                    adaptados e deixar seu feedback, ajudando outras pessoas a encontrarem a melhor solução para suas
+                    necessidades de acessibilidade.</p>
+                <p class="highlight-text" tabindex="0">Quer saber mais? Baixe o aplicativo e descubra como você pode
+                    melhorar a acessibilidade em sua cidade!</p>
+                <div class="download-buttons" role="group" aria-label="Opções de download">
+                    <a href="#" class="download-link" tabindex="0" aria-label="Baixar na Google Play"><img
+                            src="img/googleplay.png" alt="Baixar na Google Play" class="store-badge"></a>
+                    <a href="#" class="download-link" tabindex="0" aria-label="Baixar na App Store"><img
+                            src="img/appstore.png" alt="Baixar na App Store" class="store-badge"></a>
+                </div>
+            </div>
+
+            <div class="app-display">
+                <div class="mockup-container" role="img" aria-label="Simulação do aplicativo no celular">
+                    <img src="img/mockup-celular.png" alt="Simulação do aplicativo no celular" class="cellphone"
+                        tabindex="0">
+                    <div class="swiper-container" aria-roledescription="carousel"
+                        aria-label="Screenshots do aplicativo">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="img/teste1.png" class="app-screenshot"
+                                    alt="Tela 1 do aplicativo" tabindex="0"></div>
+                            <div class="swiper-slide"><img src="img/teste2.png" class="app-screenshot"
+                                    alt="Tela 2 do aplicativo" tabindex="0"></div>
+                            <div class="swiper-slide"><img src="img/teste3.png" class="app-screenshot"
+                                    alt="Tela 3 do aplicativo" tabindex="0"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="funcionalidades">
+            <h2 tabindex="0">Funcionalidades do AcessaCidades</h2>
+            <div class="features-list">
+                <div class="feature">
+                    <i class="fas fa-map-marker-alt icon-feature" aria-hidden="true"></i>
+                    <h3 tabindex="0">Mapeamento de Locais</h3>
+                    <p tabindex="0">Encontre locais acessíveis próximos a você. Utilize filtros para identificar as
+                        melhores opções adaptadas às suas necessidades.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-comments icon-feature" aria-hidden="true"></i>
+                    <h3 tabindex="0">Feedback de Usuários</h3>
+                    <p tabindex="0">Deixe sua opinião sobre a acessibilidade de locais que você visitou e ajude outros
+                        usuários com informações valiosas.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-wheelchair icon-feature" aria-hidden="true"></i>
+                    <h3 tabindex="0">Tipos de Acessibilidade</h3>
+                    <p tabindex="0">Descubra quais locais possuem rampas, elevadores, pisos táteis, entre outros
+                        recursos importantes para a mobilidade.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <h2 tabindex="0">Comece a utilizar o AcessaCidades agora mesmo!</h2>
+            <p tabindex="0">Baixe o aplicativo e faça parte de uma comunidade que transforma as cidades em lugares mais
+                inclusivos.</p>
+            <div class="download-buttons" role="group" aria-label="Links para download">
+                <a href="#"><img src="img/googleplay.png" alt="Baixar na Google Play" class="store-badge"
+                        tabindex="0"></a>
+                <a href="#"><img src="img/appstore.png" alt="Baixar na App Store" class="store-badge" tabindex="0"></a>
+            </div>
+        </section>
+
+        <!-- Botão de opções de cores -->
+        <div class="color-options-btn" id="colorOptionsBtn">Opções de cores</div>
+
+        <!-- Menu de opções -->
+        <div class="color-options" id="colorOptions">
+            <label><input type="radio" name="theme" id="darkTheme"> Tema Escuro</label><br>
+            <label><input type="radio" name="theme" id="highContrast"> Alto Contraste</label><br>
+            <label><input type="radio" name="theme" id="grayscale"> Preto e Branco</label><br>
+            <label><input type="radio" name="theme" id="resetTheme"> Redefinir</label>
+        </div>
+        <div class="color-options">
+            <!-- Suas opções de cores aqui -->
+        </div>
+
+        <!-- Guia de Acessibilidade -->
+        <button id="accessibility-guide-btn" class="guide-btn">Guia de Acessibilidade</button>
+
+        <!-- Modal para exibir a lista de teclas de atalho -->
+        <div id="accessibility-guide" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Guia de Acessibilidade</h2>
+                <p><strong>Teclas de Atalho:</strong></p>
+                <ul>
+                    <li><strong>Alt + 1</strong> - Aumentar Fonte</li>
+                    <li><strong>Alt + 2</strong> - Diminuir Fonte</li>
+                    <li><strong>Alt + 3</strong> - Redefinir Fonte</li>
+                    <li><strong>Alt + 4</strong> - Ativar Leitura de texto</li>
+                    <li><strong>Alt + S</strong> - Interrompe Leitura</li>
+                    <li><strong>Alt + 5</strong> - Desativar/Ativar Animações</li>
+                    <li><strong>Alt + 6</strong> - Pular para o Conteúdo Principal</li>
+                    <li><strong>Alt + 7</strong> - Pular para o Rodapé</li>
+                    <li><strong>Alt + 8</strong> - Ampliar Zoom</li>
+                    <li><strong>Alt + 9</strong> - Reduzir Zoom</li>
+                    <li><strong>Alt + 0</strong> - Redefinir Zoom</li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <footer id="footer" tabindex="-1">
+        <p>&copy; 2024 AcessaCidades. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Inclusão da barra de acessibilidade do VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var swiper = new Swiper('.swiper-container', {
+                effect: 'slide',
+                loop: true,
+                autoplay: {
+                    delay: 3000,  // Tempo entre as trocas de imagens (em milissegundos)
+                    disableOnInteraction: false,
+                },
+                slidesPerView: 1,
+                spaceBetween: 0,
+                navigation: false,  // Desativa a navegação com as setas
+            });
+        });
+    </script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <script>
+        // Controle das opções de cores
+        const colorOptionsBtn = document.getElementById('colorOptionsBtn');
+        const colorOptions = document.getElementById('colorOptions');
+
+        colorOptionsBtn.addEventListener('click', function () {
+            colorOptions.style.display = colorOptions.style.display === 'block' ? 'none' : 'block';
+        });
+
+        const darkTheme = document.getElementById('darkTheme');
+        const highContrast = document.getElementById('highContrast');
+        const grayscale = document.getElementById('grayscale');
+        const resetTheme = document.getElementById('resetTheme');
+
+        darkTheme.addEventListener('change', function () {
+            document.body.classList.remove('high-contrast', 'grayscale');
+            document.body.classList.add('dark-theme');
+        });
+
+        highContrast.addEventListener('change', function () {
+            document.body.classList.remove('dark-theme', 'grayscale');
+            document.body.classList.add('high-contrast');
+        });
+
+        grayscale.addEventListener('change', function () {
+            document.body.classList.remove('dark-theme', 'high-contrast');
+            document.body.classList.add('grayscale');
+        });
+
+        resetTheme.addEventListener('change', function () {
+            document.body.classList.remove('dark-theme', 'high-contrast', 'grayscale');
+        });
+    </script>
+    <script>
+        // Variável para armazenar o tamanho padrão da fonte
+        const defaultFontSize = 16;
+        let currentFontSize = defaultFontSize;
+
+        // Função para ajustar o tamanho da fonte
+        function adjustFontSize(change) {
+            currentFontSize += change;
+            document.body.style.fontSize = currentFontSize + 'px';
+        }
+
+        // Função para redefinir o tamanho da fonte para o padrão
+        function resetFontSize() {
+            currentFontSize = defaultFontSize;
+            document.body.style.fontSize = defaultFontSize + 'px';
+        }
+
+        // Atalhos de teclado para aumentar, diminuir e redefinir fonte
+        document.addEventListener('keydown', function (event) {
+            if (event.altKey && event.key === '1') {
+                adjustFontSize(1);  // Aumenta fonte
+            } else if (event.altKey && event.key === '2') {
+                adjustFontSize(-1);  // Diminui fonte
+            } else if (event.altKey && event.key === '3') {
+                resetFontSize();  // Redefine fonte
+            }
+        });
+
+        // Mostrar/Esconder o guia de acessibilidade (modal)
+        const guideBtn = document.getElementById('accessibility-guide-btn');
+        const modal = document.getElementById('accessibility-guide');
+        const closeBtn = document.getElementsByClassName('close')[0];
+
+        guideBtn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <script>
+        // Função para desativar/ativar animações
+        let animationsEnabled = true;
+        function toggleAnimations() {
+            const style = document.createElement('style');
+            if (!animationsEnabled) {
+                style.innerHTML = `* { animation: none !important; transition: none !important; }`;
+                document.head.appendChild(style);
+            } else {
+                if (document.head.contains(style)) {
+                    document.head.removeChild(style);
+                }
+            }
+            animationsEnabled = !animationsEnabled;
+        }
+
+        // Função para ampliar/reduzir zoom
+        let currentZoom = 100;
+        function adjustZoom(change) {
+            currentZoom += change;
+            document.body.style.zoom = currentZoom + '%';
+        }
+
+        // Função para redefinir o zoom
+        function resetZoom() {
+            currentZoom = 100;
+            document.body.style.zoom = '100%';
+        }
+
+        // Atalhos de teclado para funcionalidades acessíveis
+        document.addEventListener('keydown', function (event) {
+            if (event.altKey && event.key === '1') {
+                // Aumenta a fonte
+                document.body.style.fontSize = `${parseInt(getComputedStyle(document.body).fontSize) + 2}px`;
+            } else if (event.altKey && event.key === '2') {
+                // Diminui a fonte
+                document.body.style.fontSize = `${parseInt(getComputedStyle(document.body).fontSize) - 2}px`;
+            } else if (event.altKey && event.key === '3') {
+                // Redefine a fonte
+                document.body.style.fontSize = '';  // Remove a personalização, voltando ao padrão do CSS
+            } else if (event.altKey && event.key === '5') {
+                toggleAnimations();  // Desativa/ativa animações
+            } else if (event.altKey && event.key === '6') {
+                // Pular para o conteúdo principal
+                const mainContent = document.getElementById('main-content');
+                if (mainContent) {
+                    mainContent.focus();
+                    mainContent.scrollIntoView();
+                }
+            } else if (event.altKey && event.key === '7') {
+                // Pular para o rodapé
+                const footer = document.getElementById('footer');
+                if (footer) {
+                    footer.focus();
+                    footer.scrollIntoView();
+                }
+            } else if (event.altKey && event.key === '8') {
+                adjustZoom(10);  // Aumenta zoom
+            } else if (event.altKey && event.key === '9') {
+                adjustZoom(-10);  // Reduz zoom
+            } else if (event.altKey && event.key === '0') {
+                resetZoom();  // Redefine zoom
+            }
+        });
+    </script>
+
+    <script>
+        // Função para ler o texto selecionado
+        function lerTexto(texto) {
+            const utterance = new SpeechSynthesisUtterance(texto);
+            utterance.lang = 'pt-BR';  // Define o idioma
+            utterance.rate = 1;  // Velocidade normal
+            utterance.pitch = 1;  // Tom normal
+            utterance.volume = 1;  // Volume normal
+
+            // Falar o texto
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // Ativar leitura de todo o texto da página ao apertar Alt+4
+        document.addEventListener('keydown', function (event) {
+            if (event.altKey && event.key === '4') {
+                const textoPagina = document.body.innerText;  // Captura todo o texto visível da página
+                lerTexto(textoPagina);
+            }
+        });
+
+        // Função para parar a leitura
+        function pararLeitura() {
+            window.speechSynthesis.cancel();  // Para qualquer leitura ativa
+        }
+
+        // Ativar interrupção da leitura com Alt+S
+        document.addEventListener('keydown', function (event) {
+            if (event.altKey && event.key === 's') {
+                pararLeitura();
+            }
+        });
+    </script>
+
+    <script>
+        const themeToggle = document.querySelector('input[name="theme-toggle"]'); // Supondo que você tenha um input de rádio para trocar o tema
+
+        themeToggle.addEventListener('change', function () {
+            if (this.checked) {
+                document.body.classList.add('dark-theme');
+            } else {
+                document.body.classList.remove('dark-theme');
+            }
+        });
+
+    </script>
+</body>
+
+</html>

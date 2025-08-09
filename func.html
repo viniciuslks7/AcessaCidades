@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Funcionalidades do AcessaCidades - Aplicativo de acessibilidade urbana.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Funcionalidades - AcessaCidades</title>
+    <link rel="stylesheet" href="css/func.css">
+</head>
+
+<body>
+    <style>
+        /* Estilos para o botão de opções de cores */
+        .color-options-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .color-options-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Menu de opções */
+        .color-options {
+            display: none;
+            position: fixed;
+            top: 50px;
+            right: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .color-options input {
+            margin: 5px 0;
+        }
+
+        /* Estilos para os temas */
+        body.dark-theme {
+            background-color: #333;
+            color: #f8f9fa;
+        }
+
+        body.dark-theme p, 
+        body.dark-theme h1, 
+        body.dark-theme h2, 
+        body.dark-theme h3, 
+        body.dark-theme h4, 
+        body.dark-theme a,
+        body.dark-theme .color-options-btn {
+            color: #f8f9fa;
+        }
+
+        body.dark-theme .color-options {
+            background-color: #444;
+            color: #f8f9fa;
+            border-color: #666;
+        }
+
+        body.high-contrast {
+            filter: contrast(1.5);
+        }
+
+        body.grayscale {
+            filter: grayscale(100%);
+        }
+
+        /* Redefinir o tema */
+        body {
+            background-color: white;
+            color: black;
+        }
+    </style>
+    <header>
+        <div class="header-container">
+            <h1 class="header-title" tabindex="0">AcessaCidades</h1>
+            <img src="img/acessacidades.svg" alt="Logo do AcessaCidades" class="acessa-logo" tabindex="0" aria-label="Logo do AcessaCidades">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" aria-label="Ir para a página inicial" tabindex="0">Início</a></li>
+                <li><a href="sobre.html" aria-label="Ir para a página sobre" tabindex="0">Sobre</a></li>
+                <li><a href="func.html" aria-label="Ir para a página de funcionalidades" tabindex="0">Funcionalidades</a></li>
+                <li><a href="contato.html" aria-label="Ir para a página de contato" tabindex="0">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+        <section class="hero">
+            <h2 tabindex="0">Funcionalidades do AcessaCidades</h2>
+            <p>Explore as principais funcionalidades que tornam o AcessaCidades o seu guia de acessibilidade urbana.</p>
+        </section>
+
+        <section class="features" aria-labelledby="features">
+            <div class="feature-card" tabindex="0" aria-label="Mapeamento de locais acessíveis">
+                <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+                <h3>Mapeamento de Locais Acessíveis</h3>
+                <p>Encontre facilmente estabelecimentos com acessibilidade para cadeirantes, deficientes visuais e outras necessidades especiais.</p>
+            </div>
+
+            <div class="feature-card" tabindex="0" aria-label="Rotas adaptadas">
+                <i class="fas fa-wheelchair" aria-hidden="true"></i>
+                <h3>Rotas Adaptadas</h3>
+                <p>Receba orientações sobre as melhores rotas com rampas e acessos especiais para se locomover com segurança pela cidade.</p>
+            </div>
+
+            <div class="feature-card" tabindex="0" aria-label="Acessibilidade visual">
+                <i class="fas fa-braille" aria-hidden="true"></i>
+                <h3>Acessibilidade Visual</h3>
+                <p>Configurações e funcionalidades dedicadas para usuários com deficiência visual, como áudio-guia e descrição de locais.</p>
+            </div>
+
+            <div class="feature-card" tabindex="0" aria-label="Estacionamentos especiais">
+                <i class="fas fa-parking" aria-hidden="true"></i>
+                <h3>Estacionamentos Especiais</h3>
+                <p>Localize vagas reservadas para pessoas com deficiência ou mobilidade reduzida em diferentes áreas da cidade.</p>
+            </div>
+
+            <div class="feature-card" tabindex="0" aria-label="Comunidade colaborativa">
+                <i class="fas fa-hands-helping" aria-hidden="true"></i>
+                <h3>Comunidade Colaborativa</h3>
+                <p>Participe de uma rede onde os usuários compartilham informações e avaliam a acessibilidade dos locais visitados.</p>
+            </div>
+        </section>
+         <!-- Botão de opções de cores -->
+         <div class="color-options-btn" id="colorOptionsBtn">Opções de cores</div>
+        
+         <!-- Menu de opções -->
+         <div class="color-options" id="colorOptions">
+             <label><input type="radio" name="theme" id="darkTheme"> Tema Escuro</label><br>
+             <label><input type="radio" name="theme" id="highContrast"> Alto Contraste</label><br>
+             <label><input type="radio" name="theme" id="grayscale"> Preto e Branco</label><br>
+             <label><input type="radio" name="theme" id="resetTheme"> Redefinir</label>
+         </div>
+
+        <!-- Guia de Acessibilidade -->
+        <button id="accessibility-guide-btn" class="guide-btn">Guia de Acessibilidade</button>
+
+        <!-- Modal para exibir a lista de teclas de atalho -->
+        <div id="accessibility-guide" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Guia de Acessibilidade</h2>
+                <p><strong>Teclas de Atalho:</strong></p>
+                <ul>
+                    <li><strong>Alt + 1</strong> - Aumentar Fonte</li>
+                    <li><strong>Alt + 2</strong> - Diminuir Fonte</li>
+                    <li><strong>Alt + 3</strong> - Redefinir Fonte</li>
+                    <li><strong>Alt + 4</strong> - Ativar Leitura de texto</li>
+                    <li><strong>Alt + S</strong> - Interrompe Leitura</li>
+                    <li><strong>Alt + 5</strong> - Desativar/Ativar Animações</li>
+                    <li><strong>Alt + 6</strong> - Pular para o Conteúdo Principal</li>
+                    <li><strong>Alt + 7</strong> - Pular para o Rodapé</li>
+                    <li><strong>Alt + 8</strong> - Ampliar Zoom</li>
+                    <li><strong>Alt + 9</strong> - Reduzir Zoom</li>
+                    <li><strong>Alt + 0</strong> - Redefinir Zoom</li>
+                  </ul>
+                  
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer" tabindex="-1">
+        <p>&copy; 2024 AcessaCidades. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
+
+<!-- Integração com o VLibras -->
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
+<script>
+    // Controle das opções de cores
+    const colorOptionsBtn = document.getElementById('colorOptionsBtn');
+    const colorOptions = document.getElementById('colorOptions');
+
+    colorOptionsBtn.addEventListener('click', function () {
+        colorOptions.style.display = colorOptions.style.display === 'block' ? 'none' : 'block';
+    });
+
+    const darkTheme = document.getElementById('darkTheme');
+    const highContrast = document.getElementById('highContrast');
+    const grayscale = document.getElementById('grayscale');
+    const resetTheme = document.getElementById('resetTheme');
+
+    darkTheme.addEventListener('change', function () {
+        document.body.classList.remove('high-contrast', 'grayscale');
+        document.body.classList.add('dark-theme');
+    });
+
+    highContrast.addEventListener('change', function () {
+        document.body.classList.remove('dark-theme', 'grayscale');
+        document.body.classList.add('high-contrast');
+    });
+
+    grayscale.addEventListener('change', function () {
+        document.body.classList.remove('dark-theme', 'high-contrast');
+        document.body.classList.add('grayscale');
+    });
+
+    resetTheme.addEventListener('change', function () {
+        document.body.classList.remove('dark-theme', 'high-contrast', 'grayscale');
+    });
+</script>
+
+<script>
+    // Variável para armazenar o tamanho padrão da fonte
+    const defaultFontSize = 16;
+    let currentFontSize = defaultFontSize;
+
+    // Função para ajustar o tamanho da fonte
+    function adjustFontSize(change) {
+        currentFontSize += change;
+        document.body.style.fontSize = currentFontSize + 'px';
+    }
+
+    // Função para redefinir o tamanho da fonte para o padrão
+    function resetFontSize() {
+        currentFontSize = defaultFontSize;
+        document.body.style.fontSize = defaultFontSize + 'px';
+    }
+
+    // Atalhos de teclado para aumentar, diminuir e redefinir fonte
+    document.addEventListener('keydown', function (event) {
+        if (event.altKey && event.key === '1') {
+            adjustFontSize(1);  // Aumenta fonte
+        } else if (event.altKey && event.key === '2') {
+            adjustFontSize(-1);  // Diminui fonte
+        } else if (event.altKey && event.key === '3') {
+            resetFontSize();  // Redefine fonte
+        }
+    });
+
+    // Mostrar/Esconder o guia de acessibilidade (modal)
+    const guideBtn = document.getElementById('accessibility-guide-btn');
+    const modal = document.getElementById('accessibility-guide');
+    const closeBtn = document.getElementsByClassName('close')[0];
+
+    guideBtn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    closeBtn.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+<script>
+    // Função para desativar/ativar animações
+    let animationsEnabled = true;
+    function toggleAnimations() {
+        const style = document.createElement('style');
+        if (!animationsEnabled) {
+            style.innerHTML = `* { animation: none !important; transition: none !important; }`;
+            document.head.appendChild(style);
+        } else {
+            if (document.head.contains(style)) {
+                document.head.removeChild(style);
+            }
+        }
+        animationsEnabled = !animationsEnabled;
+    }
+
+    // Função para ampliar/reduzir zoom
+    let currentZoom = 100;
+    function adjustZoom(change) {
+        currentZoom += change;
+        document.body.style.zoom = currentZoom + '%';
+    }
+
+    // Função para redefinir o zoom
+    function resetZoom() {
+        currentZoom = 100;
+        document.body.style.zoom = '100%';
+    }
+
+    // Atalhos de teclado para funcionalidades acessíveis
+    document.addEventListener('keydown', function (event) {
+        if (event.altKey && event.key === '1') {
+            // Aumenta a fonte
+            document.body.style.fontSize = `${parseInt(getComputedStyle(document.body).fontSize) + 2}px`;
+        } else if (event.altKey && event.key === '2') {
+            // Diminui a fonte
+            document.body.style.fontSize = `${parseInt(getComputedStyle(document.body).fontSize) - 2}px`;
+        } else if (event.altKey && event.key === '3') {
+            // Redefine a fonte
+            document.body.style.fontSize = '';  // Remove a personalização, voltando ao padrão do CSS
+        } else if (event.altKey && event.key === '5') {
+            toggleAnimations();  // Desativa/ativa animações
+        } else if (event.altKey && event.key === '6') {
+            // Pular para o conteúdo principal
+            const mainContent = document.getElementById('main-content');
+            if (mainContent) {
+                mainContent.focus();
+                mainContent.scrollIntoView();
+            }
+        } else if (event.altKey && event.key === '7') {
+            // Pular para o rodapé
+            const footer = document.getElementById('footer');
+            if (footer) {
+                footer.focus();
+                footer.scrollIntoView();
+            }
+        } else if (event.altKey && event.key === '8') {
+            adjustZoom(10);  // Aumenta zoom
+        } else if (event.altKey && event.key === '9') {
+            adjustZoom(-10);  // Reduz zoom
+        } else if (event.altKey && event.key === '0') {
+            resetZoom();  // Redefine zoom
+        }
+    });
+</script>
+
+<script>
+    // Função para ler o texto selecionado
+    function lerTexto(texto) {
+        const utterance = new SpeechSynthesisUtterance(texto);
+        utterance.lang = 'pt-BR';  // Define o idioma
+        utterance.rate = 1;  // Velocidade normal
+        utterance.pitch = 1;  // Tom normal
+        utterance.volume = 1;  // Volume normal
+
+        // Falar o texto
+        window.speechSynthesis.speak(utterance);
+    }
+
+    // Ativar leitura de todo o texto da página ao apertar Alt+4
+    document.addEventListener('keydown', function (event) {
+        if (event.altKey && event.key === '4') {
+            const textoPagina = document.body.innerText;  // Captura todo o texto visível da página
+            lerTexto(textoPagina);
+        }
+    });
+
+    // Função para parar a leitura
+    function pararLeitura() {
+        window.speechSynthesis.cancel();  // Para qualquer leitura ativa
+    }
+
+    // Ativar interrupção da leitura com Alt+S
+    document.addEventListener('keydown', function (event) {
+        if (event.altKey && event.key === 's') {
+            pararLeitura();
+        }
+    });
+
+</script>
